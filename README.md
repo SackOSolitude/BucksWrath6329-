@@ -11,7 +11,7 @@
 6. check the white box on the left side of the file name you are importing
 7. click *finish* and you're done!
 ##### second way- clone link-
-1. click Clone/download button on the repository page and a link will pop up, copy that
+1. click Clone/download button on the repository page and a link will pop up, copy that - this is the link as of now: (https://github.com/SackOSolitude/BucksWrath6329-.git)
 2. then go into Eclipse and right click on an empty part of the package explore
 3. click import
 4. left click on the folder *Git* then double click *projects from git*  
