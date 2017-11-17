@@ -2,9 +2,14 @@
 
 ## Table of contents-
 [Setting up Eclipse](https://github.com/SackOSolitude/BucksWrath6329-/blob/master/README.md#setting-up-eclipse-for-java-or-c-coding-)
-[Importing] 
-[Exporting]
-[Making changes]
+
+[Importing](https://github.com/SackOSolitude/BucksWrath6329-/blob/master/README.md#importing-github-projects-into-eclipse-workspace----)
++ [Easy way](//github.com/SackOSolitude/BucksWrath6329-/blob/master/README.md#easy-way--recommended-)
++ [HARD way](https://github.com/SackOSolitude/BucksWrath6329-/blob/master/README.md#second-way--clone-link--not-recommended)
+
+[Exporting](https://github.com/SackOSolitude/BucksWrath6329-/blob/master/README.md#exportinguploading-to-eclipse----)
+
+[Making changes](https://github.com/SackOSolitude/BucksWrath6329-/blob/master/README.md#changing-readmemd)
 
 ### setting up Eclipse for java or c++ coding-
 go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-installing-eclipse-c-java) and follow all of the steps on the website. `ALL OF THEM!!` excluding what your not using that is, for example if your coding with java only do the java steps and if your coding in c++ then only do c++ steps.
