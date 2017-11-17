@@ -3,7 +3,7 @@
 
 
 ## setting up Eclipse for java or c++ coding-
-go [here] (https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-installing-eclipse-c-java) and follow all of the steps on the website. `ALL OF THEM!!` excluding what your not using that is, for example if your coding with java only do the java steps and if your coding in c++ then only do c++ steps.
+go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-installing-eclipse-c-java) and follow all of the steps on the website. `ALL OF THEM!!` excluding what your not using that is, for example if your coding with java only do the java steps and if your coding in c++ then only do c++ steps.
 
 
 
