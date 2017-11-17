@@ -57,3 +57,14 @@ This is very unreliable and has many errors so using the first way is very recom
 
 
 
+## Other- 
+
+### Boxing in lines-
+``` use three ` before and after what you want boxed in and it will look exactly liket this line.```
+
+
+
+
+
+
+
