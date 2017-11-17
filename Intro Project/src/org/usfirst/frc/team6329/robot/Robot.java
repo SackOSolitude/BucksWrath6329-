@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 public class Robot extends IterativeRobot {
 	public static DriveSystem drivesystem;
 	public static OI oi;
-	
+	public static PDP pdp;
 	
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -90,8 +90,9 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
+		  
+    }
 		
-	}
 
 	/**
 	 * This function is called periodically during test mode
