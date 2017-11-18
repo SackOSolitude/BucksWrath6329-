@@ -19,7 +19,8 @@ go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-install
 ### importing Github Projects into Eclipse workspace ---  
 ##### Easy way -`recommended`-
 `Make sure you create a new java project folder in the workspace to import your project into!!!`
-- Hit clone/download button on the repository page  and download ZIP file
+- Hit clone/download button on the repository page  and download ZIP file looks like--
+![](https://help.github.com/assets/images/help/repository/clone-repo-clone-url-button.png) 
 - "unzip" or extract file and place somewhere you can remember such as on your desktop 
 - Then open Eclipse and right click within package explorer
 - Click on import and open file *general* then use *File System*
