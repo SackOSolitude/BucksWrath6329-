@@ -1,4 +1,5 @@
 # BucksWrath Frc team 6329- Codes for robots
+![](https://scontent.fzty2-1.fna.fbcdn.net/v/t1.0-1/p200x200/23621614_1895119097169785_7334045388425560233_n.png?oh=8a1ba47460b295445c007e9880f0645e&oe=5A9254F0)
 
 ## Table of contents-
 - [Setting up Eclipse](https://github.com/SackOSolitude/BucksWrath6329-/blob/master/README.md#setting-up-eclipse-for-java-or-c-coding-)
@@ -18,7 +19,7 @@ go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-install
 
 ### importing Github Projects into Eclipse workspace ---  
 ##### Easy way -`recommended`-
-`Make sure you create a new java project folder in the workspace to import your project into!!!`
+>Make sure you create a new java project folder in the workspace to import your project into!!!
 - Hit clone/download button on the repository page  and download ZIP file looks like--
 ![](https://help.github.com/assets/images/help/repository/clone-repo-clone-url-button.png) 
 - "unzip" or extract file and place somewhere you can remember such as on your desktop 
@@ -38,7 +39,7 @@ go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-install
 - Click *finish* 
 - Click file *java* then within that file *java project* then hit *next* 
 - give it a project name then hit *finish* then *finish* again then that should be it.
-This is very unreliable and has many errors so using the first way is very recommended
+>This is very unreliable and has many errors so using the first way is very recommended
 
 
 
@@ -46,7 +47,7 @@ This is very unreliable and has many errors so using the first way is very recom
 ### Exporting/Uploading to Eclipse ---
 +  Go to the repository main code page and to the left of the green Clone/Download button there should be an upload button. Click that or just click [here](https://github.com/SackOSolitude/BucksWrath6329-/upload/master) 
 + Now either browse for your file through the file in file explorer and drag into the drop box on the page  or hit *choose your files* and find wanted files in file explorer.
-+ `highly reccomend easy way, drag and drop!!!`
+> `highly reccomend easy way, drag and drop!!!`
 
 
 
