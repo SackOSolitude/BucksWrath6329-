@@ -12,12 +12,12 @@
 
 - [Making changes](https://github.com/SackOSolitude/BucksWrath6329-/blob/master/README.md#changing-readmemd)
 
-### setting up Eclipse for java or c++ coding-
+### Setting up Eclipse for java or c++ coding-
 go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-installing-eclipse-c-java) and follow all of the steps on the website. `ALL OF THEM!!` excluding what your not using that is, for example if your coding with java only do the java steps and if your coding in c++ then only do c++ steps.
 
 
 
-### importing Github Projects into Eclipse workspace ---  
+### Importing Github Projects into Eclipse workspace ---  
 ##### Easy way -`recommended`-
 >Make sure you create a new java project folder in the workspace to import your project into!!!
 - Hit clone/download button on the repository page  and download ZIP file looks like--
@@ -47,13 +47,13 @@ go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-install
 ### Exporting/Uploading to Eclipse ---
 +  Go to the repository main code page and to the left of the green Clone/Download button there should be an upload button. Click that or just click [here](https://github.com/SackOSolitude/BucksWrath6329-/upload/master) 
 + Now either browse for your file through the file in file explorer and drag into the drop box on the page  or hit *choose your files* and find wanted files in file explorer.
-> `highly reccomend easy way, drag and drop!!!`
+> 'dragging and dropping into browser is much better'
 
 
 
 
 ### Changing README.md
--If something needs to change or be added on here then make an edit on the edits branch and what ever needs to be edited use tilde (looks like this ~ and is under Esc key) three times before and after a sentance that needs to be changed and it will put a slash through it. for example: ~~~The cake is a lie~~~ and put the needed change inside () after the sentance such as change to (THE CAKE IS A LIE). if soemthing needs to be added just add it in. anything else you need done you can contact me (devs you know me) and I know all of the steps to change or add anything. whendone jsut hit commit changes and i'll look at it and make changes. 
+-If something needs to change or be added on here then make an edit on the edits branch and what ever needs to be edited use tilde (looks like this ~ and is under Esc key) three times before and after a sentance that needs to be changed and it will put a slash through it. for example: ~~~The cake is a lie~~~ and put the needed change inside () after the sentance such as change to (THE CAKE IS A LIE). if soemthing needs to be added just add it in. anything else you need done you can contact me (devs you know me) and I know all of the steps to change or add anything. whendone just hit commit changes and i'll look at it and make changes. 
 
 
 
@@ -63,7 +63,8 @@ go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-install
 
 ### Boxing in lines-
 ``` use three ` before and after what you want boxed in and it will look exactly liket this line.```
-
+also using >  works the same jsut slightly different (example below)
+> looks like this 
 
 
 
