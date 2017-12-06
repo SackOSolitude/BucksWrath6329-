@@ -5,9 +5,11 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team6329.robot.subsystems.DriveTrainSubsystem;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -17,11 +19,14 @@ import org.usfirst.frc.team6329.robot.subsystems.DriveTrainSubsystem;
  */
 public class Robot extends IterativeRobot {
 
-	public static final DriveTrainSubsystem DriveTrainSub = new DriveTrainSubsystem();
-	public static OI oi;
-
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
+	
+	public static OI oi;
+	
+    public static Robot robot;
+    public static DriveTrainSubsystem DriveTrainSubsystem;
+    public static NetworkTable table;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -29,6 +34,13 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		
+		robot = this;
+    	RobotMap.init();
+
+    	DriveTrainSubsystem = new DriveTrainSubsystem();
+
+    	
 		oi = new OI();
 		
 		// chooser.addObject("My Auto", new MyAutoCommand());
@@ -42,6 +54,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void disabledInit() {
+        Scheduler.getInstance().run();
 
 	}
 
@@ -63,18 +76,29 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = chooser.getSelected();
-
-		/*
-		 * String autoSelected = SmartDashboard.getString("Auto Selector",
-		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-		 * = new MyAutoCommand(); break; case "Default Auto": default:
-		 * autonomousCommand = new ExampleCommand(); break; }
-		 */
-
-		// schedule the autonomous command (example)
-		if (autonomousCommand != null)
-			autonomousCommand.start();
+		String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+   	    switch(autoSelected) { 
+   	 		//case "Default Auto": default : autonomousCommand = new Red2();
+   	 		//break; 
+   	 		//case "Red 2" : autonomousCommand = new Red2();
+   	 		//break;
+   	 		//case "Red 1" : autonomousCommand = new Red1();
+   	 		//break;
+   	 		//case "Red 3" : autonomousCommand = new Red3();
+   	 		//break;
+   	 		//case "Blue 1" : autonomousCommand = new Blue1();
+   	 		//break;
+   	 		//case "Blue 2" : autonomousCommand = new Blue2();
+   	 		//break;
+   	 		//case "Blue 3" : autonomousCommand = new Blue3();
+   	 		//break;
+   	 		//case "Gyro Test" : autonomousCommand = new GyroTest();
+   	 		//break;
+   	 		//case "Vision Test" : autonomousCommand = new VisionTest();
+   	 		//break;
+   	   }
+   	 
+       if (autonomousCommand != null) autonomousCommand.start();
 	}
 
 	/**
@@ -87,12 +111,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-		// teleop starts running. If you want the autonomous to
-		// continue until interrupted by another command, remove
-		// this line or comment it out.
-		if (autonomousCommand != null)
-			autonomousCommand.cancel();
+        if (autonomousCommand != null) autonomousCommand.cancel();
 	}
 
 	/**

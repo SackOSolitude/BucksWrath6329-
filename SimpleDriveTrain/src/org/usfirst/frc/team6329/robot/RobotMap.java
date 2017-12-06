@@ -1,5 +1,8 @@
 package org.usfirst.frc.team6329.robot;
 
+import edu.wpi.first.wpilibj.RobotDrive;
+
+
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -11,16 +14,8 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  * floating around.
  */
 public class RobotMap {
-	// For example to map the left and right motors, you could define the
-	// following variables to use with your drivetrain subsystem.
-	// public static int leftMotor = 1;
-	// public static int rightMotor = 2;
 
-	
-	// If you are using multiple modules, make sure to define both the port
-	// number and the module. For example you with a rangefinder:
-	// public static int rangefinderPort = 1;
-	// public static int rangefinderModule = 1;
+	public static RobotDrive drive; 
 	public static SpeedController driveSystemleftfront;
     public static SpeedController driveSystemleftrear;
     public static SpeedController driveSystemrightfront;
@@ -31,17 +26,23 @@ public class RobotMap {
 	public static final int LBSpark = 14;
 	
 	   public static void init() {
-		   driveSystemleftfront = new Spark(0);
-	        LiveWindow.addActuator("Drive System", "left front ", (Spark) driveSystemleftfront);
+		   driveSystemleftfront = new Spark(3);
+	        LiveWindow.addActuator("DriveTrainCommand", "left front ", (Spark) driveSystemleftfront);
 	        
-	        driveSystemleftrear = new Spark(1);
-	        LiveWindow.addActuator("Drive System", "left rear", (Spark) driveSystemleftrear);
+	        driveSystemleftrear = new Spark(2);
+	        LiveWindow.addActuator("DriveTrainCommand", "left rear", (Spark) driveSystemleftrear);
 	        
-	        driveSystemrightfront = new Spark(2);
-	        LiveWindow.addActuator("Drive System", "right front", (Spark) driveSystemrightfront);
+	        driveSystemrightfront = new Spark(1);
+	        LiveWindow.addActuator("DriveTrainCommand", "right front", (Spark) driveSystemrightfront);
 	        
-	        driveSystemrightrear = new Spark(3);
-	        LiveWindow.addActuator("Drive System", "right rear", (Spark) driveSystemrightrear);
+	        driveSystemrightrear = new Spark(0);
+	        LiveWindow.addActuator("DriveTrainCommand", "right rear", (Spark) driveSystemrightrear);
 	        
+	    	drive = new RobotDrive(driveSystemleftfront,driveSystemleftrear , driveSystemrightfront, driveSystemrightrear);
+	    	
+	    	drive.setSafetyEnabled(true);
+	        drive.setExpiration(0.1);
+	        drive.setSensitivity(0.5);
+	        drive.setMaxOutput(1.0);
 	   }
 }
