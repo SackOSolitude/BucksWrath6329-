@@ -15,19 +15,29 @@
 ### Setting up Eclipse for Java or C++ coding-
 go [here](https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-installing-eclipse-c-java) and follow all of the steps on the website. `ALL OF THEM!!` excluding what your not using that is, for example if your coding with java only do the java steps and if your coding in c++ then only do c++ steps.
 
-
+You're also going to want to install java jdk- 1.8.0 or java SE- jdk 9.0 and make sure it is properly downloaded and activated.
 
 ### Importing Github Projects into Eclipse workspace ---  
 ##### Easy way -`recommended`-
->Make sure you create a new java project folder in the workspace to import your project into!!!
-- Hit clone/download button on the repository page  and download ZIP file looks like--
-![](https://help.github.com/assets/images/help/repository/clone-repo-clone-url-button.png) 
-- "unzip" or extract file and place somewhere you can remember such as on your desktop 
-- Then open Eclipse and right click within package explorer
-- Click on import and open file *general* then use *File System*
-- Click on Browse... and find where you put the downloaded file and click on it and hit *Ok*
-- Check the white box on the left side of the file name you are importing
-- Click *finish* and you're done!
+make sure file you wish to import has been unziped 
+- hit File 
+     - import 
+- general
+   - projects from folder or archive
+- now go to the place the project is located and click once on the folder 
+-` make sure there is only one file with all the contents. this may be confusing so an example is given below.`
+-`say the whole file says " BucksWrath6329--master" and you want to have the project "simpledrivetrain"
+you would open " BucksWrath6329--master" then the file "bucksWrath6329--master" then you would see the file "simpledrivetrain". what you do from there is click that then continue with the steps below.` 
+
+- BucksWrath6329--master
+   - BucksWrath6329--master
+     - SimpleDriveTrain `
+   
+  
+- hit import 
+-  check the box next to your project name 
+- hit finish and you should have the project properly imported with packages and everything!
+
 ##### Second way- Clone link- `NOT RECOMMENDED`
 - Click Clone/download button on the repository page and a link will pop up, copy that - this is the link as of now: (https://github.com/SackOSolitude/BucksWrath6329-.git)
 - Then go into Eclipse and right click on an empty part of the package explore
