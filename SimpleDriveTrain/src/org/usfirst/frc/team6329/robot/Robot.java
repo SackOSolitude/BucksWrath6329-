@@ -1,6 +1,10 @@
 
 package org.usfirst.frc.team6329.robot;
 
+import org.usfirst.frc.team6329.robot.subsystems.DriveTrainSubsystem;
+import org.usfirst.frc.team6329.robot.subsystems.Intake;
+import org.usfirst.frc.team6329.robot.subsystems.Shooter;
+
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.CameraServer;
@@ -11,16 +15,6 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc.team6329.robot.subsystems.DriveTrainSubsystem;
-import org.usfirst.frc.team6329.robot.commands.autonomous.Blue1;
-import org.usfirst.frc.team6329.robot.commands.autonomous.Blue2;
-import org.usfirst.frc.team6329.robot.commands.autonomous.Blue3;
-import org.usfirst.frc.team6329.robot.commands.autonomous.GyroTest;
-import org.usfirst.frc.team6329.robot.commands.autonomous.Red1;
-import org.usfirst.frc.team6329.robot.commands.autonomous.Red2;
-import org.usfirst.frc.team6329.robot.commands.autonomous.Red3;
-// here import org.usfirst.frc.team6329.robot.commands.autonomous.VisionTest;
-import org.usfirst.frc.team6329.robot.PDP;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -36,13 +30,15 @@ public class Robot extends IterativeRobot {
 	
 	public static OI oi;
 	
+
     public static Robot robot;
     public static DriveTrainSubsystem DriveTrainSubsystem;
     public static NetworkTable table;
-    public static ADXRS450_Gyro gyro;
-    public static PDP pdp;
     public static UsbCamera Camera;
-    
+    public static PDP pdp;
+    public static ADXRS450_Gyro gyro;
+    public static Intake Intake;
+    public static Shooter Shooter;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -50,19 +46,18 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
-		robot = this; 
+		
+		robot = this;
 		pdp = new PDP();
 		gyro = new ADXRS450_Gyro();
-			
-		Constants.isrobot = pdp.isrobot();
     	RobotMap.init();
 
 		
 		
-	
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
-			
+		
+		
 		UsbCamera Camera = CameraServer.getInstance().startAutomaticCapture("Bob", 0);
 		Camera.setResolution(160, 120);
 		Camera.setFPS(15);
@@ -72,19 +67,21 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 	}
 
-	
+	/**
+	 * This function is called once each time the robot enters Disabled mode.
+	 * You can use it to reset any subsystem information you want to clear when
+	 * the robot is disabled.
+	 */
 	@Override
 	public void disabledInit() {
-        
+        Scheduler.getInstance().run();
 
 	}
 
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
-		DriveTrainSubsystem.updateDashboard();
-		pdp.updateDashboard();
-		
+		   pdp.updateDashboard();
 	}
 
 	/**
@@ -99,41 +96,41 @@ public class Robot extends IterativeRobot {
 	 * to the switch structure below with additional strings & commands.
 	 */
 	@Override
+	public void autonomousInit() {
+		String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+   	    switch(autoSelected) { 
+   	 		//case "Default Auto": default : autonomousCommand = new Red2();
+   	 		//break; 
+   	 		//case "Red 2" : autonomousCommand = new Red2();
+   	 		//break;
+   	 		//case "Red 1" : autonomousCommand = new Red1();
+   	 		//break;
+   	 		//case "Red 3" : autonomousCommand = new Red3();
+   	 		//break;
+   	 		//case "Blue 1" : autonomousCommand = new Blue1();
+   	 		//break;
+   	 		//case "Blue 2" : autonomousCommand = new Blue2();
+   	 		//break;
+   	 		//case "Blue 3" : autonomousCommand = new Blue3();
+   	 		//break;
+   	 		//case "Gyro Test" : autonomousCommand = new GyroTest();
+   	 		//break;
+   	 		//case "Vision Test" : autonomousCommand = new VisionTest();
+   	 		//break;
+   	   }
+   	 
+       if (autonomousCommand != null) autonomousCommand.start();
+	}
 
-    public void autonomousInit() {
-    	 String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
-    	 switch(autoSelected) { 
-    	 	case "Default Auto": default : autonomousCommand = new Red2();
-    	 	break; 
-    	 	case "Red 2" : autonomousCommand = new Red2();
-    	 	break;
-    	 	case "Red 1" : autonomousCommand = new Red1();
-    	 	break;
-    	 	case "Red 3" : autonomousCommand = new Red3();
-    	 	break;
-    	 	case "Blue 1" : autonomousCommand = new Blue1();
-    	 	break;
-    	 	case "Blue 2" : autonomousCommand = new Blue2();
-    	 	break;
-    	 	case "Blue 3" : autonomousCommand = new Blue3();
-    	 	break;
-    	// 	case "Gyro Test" : autonomousCommand = new GyroTest();
-    	 //	break;
-    	 //	case "Vision Test" : autonomousCommand = new VisionTest();
-    	// 	break;
-    	   }
-    	 
-        if (autonomousCommand != null) autonomousCommand.start();
-    }
-    	 
-    /**
-     * This function is called periodically during autonomous
-     */
-    public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
-        pdp.updateDashboard();
-        DriveTrainSubsystem.updateDashboard();
-    }
+	/**
+	 * This function is called periodically during autonomous
+	 */
+	@Override
+	public void autonomousPeriodic() {
+		Scheduler.getInstance().run();
+		   pdp.updateDashboard();
+	}
+
 	@Override
 	public void teleopInit() {
         if (autonomousCommand != null) autonomousCommand.cancel();
@@ -145,7 +142,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		pdp.updateDashboard();
+		   pdp.updateDashboard();
 	}
 
 	/**
@@ -154,6 +151,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void testPeriodic() {
 		LiveWindow.run();
-		pdp.updateDashboard();
+		   pdp.updateDashboard();
 	}
 }

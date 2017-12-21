@@ -13,7 +13,17 @@ public class PDP extends PowerDistributionPanel {
         indicator = new DigitalInput(0);
     }
 
-       public double getRightFrontAmps() {
+    
+
+    public double getMeanDrivetrainAmps() {
+        return getTotalDriveTrainAmps() / 4;
+    }
+
+    /*
+     * Methods for getting current from individual drivetrain cims
+     */
+
+    public double getRightFrontAmps() {
         return getCurrent(RobotMap.PDP.RFSpark);
     }
 
@@ -45,7 +55,7 @@ public class PDP extends PowerDistributionPanel {
         return indicator.get();
     }
 
-    public boolean isrobot() {
+    public boolean isUglyBuckling() {
         return indicator.get();
     }
 
@@ -57,6 +67,7 @@ public class PDP extends PowerDistributionPanel {
         SmartDashboard.putNumber("PDP/Current/RightFront", getRightFrontAmps());
         SmartDashboard.putNumber("PDP/Current/RightBack", getRightBackAmps());
         
+       
     }
 
 }
